@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     line-height: 1.6;
 }
@@ -15,29 +15,31 @@ body {
 .navbar {
     background: #003366;
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    display: inline-block;
+    font-size: 1.8rem;
 }
 
 .nav-links {
     list-style: none;
-    display: inline-block;
-    float: right;
-}
-
-.nav-links li {
-    display: inline;
-    margin-left: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6600;
 }
 
 /* Hero Section */
@@ -45,20 +47,61 @@ body {
     background: linear-gradient(to right, #0066cc, #003366);
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+}
+
+.hero .cta-button:hover {
+    background: #cc5200;
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Pricing Section */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+.pricing-item {
+    text-align: center;
+    padding: 20px;
+    background: #e6f7ff;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Social Media */
-.social-media a {
+.pricing-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+.contact .cta-button {
     display: inline-block;
-    margin: 10px;
-    text-decoration: none;
-    color: #0066cc;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ff6600, #cc5200);
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact .cta-button:hover {
+    background: linear-gradient(to right, #cc5200, #ff6600);
 }
